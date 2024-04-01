@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service
+@Service // By default, beans are singleton scope in Spring.
 public class CustomerServiceImpl implements ICustomerService {
 
     @Autowired
