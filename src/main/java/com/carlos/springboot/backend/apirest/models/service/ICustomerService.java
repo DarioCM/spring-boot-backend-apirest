@@ -8,4 +8,6 @@ public interface ICustomerService {
 
     public List<Customer> findAll();
 
+    public String getHelloMessage();
+
 }

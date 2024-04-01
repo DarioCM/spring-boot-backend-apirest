@@ -19,4 +19,9 @@ public class CustomerServiceImpl implements ICustomerService {
     public List<Customer> findAll() {
         return (List<Customer>) customerDao.findAll();
     }
+
+    @Override
+    public String getHelloMessage() {
+        return "hello";
+    }
 }
