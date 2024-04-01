@@ -14,9 +14,9 @@ public class CustomerController {
     private ICustomerService customerService;
 
     @RequestMapping("/hello")
-    public Model sayHello(Model model){
+    public String sayHello(Model model){
         model.addAttribute("message",customerService.getHelloMessage() );
-        return model;
+        return "hello"; // The method then returns a string "hello", which is the name of the view to be rendered.
     }
 
 }
