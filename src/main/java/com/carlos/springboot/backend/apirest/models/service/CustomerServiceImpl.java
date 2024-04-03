@@ -21,6 +21,25 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
+    @Transactional(readOnly = true)
+    public Customer findById(Long id) {
+        return customerDao.findById(id).orElse(new Customer());
+        //if null return empty object
+    }
+
+    @Override
+    @Transactional
+    public Customer save(Customer customer) {
+        return customerDao.save(customer);
+    }
+
+    @Override
+    @Transactional
+    public void delete(Long id) {
+         customerDao.deleteById(id);
+    }
+
+    @Override
     public String getHelloMessage() {
         return "hello";
     }
