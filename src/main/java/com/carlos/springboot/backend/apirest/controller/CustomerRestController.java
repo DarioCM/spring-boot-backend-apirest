@@ -34,6 +34,22 @@ public class CustomerRestController  {
         return customerService.save(customer);
     }
 
+    @PutMapping("/customers/{id}")
+    public Customer update(@RequestBody Customer customer, @PathVariable Long id){
+        Customer auxCustomer = customerService.findById(id);
 
+        auxCustomer.setEmail(customer.getEmail());
+        auxCustomer.setName(customer.getName());
+        auxCustomer.setLastName(customer.getLastName());
+
+        return customerService.save(auxCustomer);
+
+    }
+
+    @DeleteMapping("/customers/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id){
+        customerService.delete(id);
+    }
 
 }
