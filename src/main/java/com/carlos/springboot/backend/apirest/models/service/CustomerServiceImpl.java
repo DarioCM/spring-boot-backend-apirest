@@ -3,12 +3,14 @@ package com.carlos.springboot.backend.apirest.models.service;
 import com.carlos.springboot.backend.apirest.models.dao.ICustomerDao;
 import com.carlos.springboot.backend.apirest.models.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service // By default, beans are singleton scope in Spring.
+@Qualifier("v1")
 public class CustomerServiceImpl implements ICustomerService {
 
     @Autowired
